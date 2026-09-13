@@ -1,0 +1,20 @@
+# Source and secrets must never appear in this docs-only repo
+/target/
+*.rs
+*.rs.bk
+*.pdb
+*.exe
+*.zip
+*.sha256
+*.pem
+*.key
+*.toml
+.env
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
