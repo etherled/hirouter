@@ -17,6 +17,10 @@
 3. 模型名不用改，沿用你上游原来的模型名；流式输出、多轮对话照常。
 4. 其他兼容 OpenAI / Anthropic 的客户端同理：只改 Base URL 和 Key。
 
+填好的样子（Key 已打码，只露前缀格式）：
+
+![CC Switch 自定义供应商：填 Base URL 与网关 Key](images/ccswitch-provider.png)
+
 ## 3. 确认跑通
 
 - 在客户端发一次普通请求，能正常回包即通。
