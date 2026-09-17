@@ -1,10 +1,12 @@
 # HiRouter · BYOK 省 token 网关，实测省 70%
 
-![token spend −70.8%](https://img.shields.io/badge/token_spend-%E2%88%9270.8%25-brightgreen) ![status](https://img.shields.io/badge/status-public_beta-blue) ![works with](https://img.shields.io/badge/works_with-Claude_Code_%7C_OpenAI-purple) ![free tier](https://img.shields.io/badge/free_tier-500_req%2Fday-orange)
+![token spend −70.8%](https://img.shields.io/badge/token_spend-%E2%88%9270.8%25-brightgreen) ![status](https://img.shields.io/badge/status-public_beta-blue) ![works with](https://img.shields.io/badge/works_with-Claude_Code_%7C_Codex_%7C_opencode-purple) ![free tier](https://img.shields.io/badge/free_tier-500_req%2Fday-orange)
 
 > **170 次 Codex 真实请求实测：原始 2318 万 token → 实发 677 万（省 70.8%）**；其中 132 次省 70%–90%，上下文越大省得越多。口径：客户端估算，非上游账单——完整说明见 [docs/BENCHMARK.md](docs/BENCHMARK.md)。
 
-> 英文版：[README.md](README.md) · 免费公测 · 试用：https://hirouter.swancat.com
+> **另有 184 轮 opencode 聊天实测：估算约 2357 万 → 实发约 1016 万（省 56.9%）**，零失败、零重置。同样是客户端估算口径——见 [docs/BENCHMARK.md](docs/BENCHMARK.md#opencode-184-rounds-sep-16)。
+
+> 英文版：[README.md](README.md) · 免费公测 · 试用：https://hirouter.swancat.com · 产品页 + FAQ：https://swancat.com/hirouter/
 >
 > **本仓仅含说明文档，服务端源码暂不开源。**
 
@@ -13,7 +15,7 @@ HiRouter 是给 AI 编程 agent 用的云端网关：你自带上游 Key（BYOK�
 ## 3 步上手
 
 1. **注册验证**：https://hirouter.swancat.com，用邮箱注册，验证后拿第一把网关 Key（`hrsk_` 开头）。
-2. **填进客户端**：以 CC Switch 为例，加自定义供应商，Base URL 填 `https://api-hirouter.swancat.com/v1`，Key 填网关 Key。详细步骤见 [docs/USAGE.md](docs/USAGE.md)。
+2. **填进客户端**：以 CC Switch 为例，加自定义供应商，Base URL 填 `https://api-hirouter.swancat.com/v1`，Key 填网关 Key。Claude Code / Codex / opencode 都支持，分客户端配置见 [docs/USAGE.md](docs/USAGE.md)。
 3. **照常用**：改写与折叠在网关侧自动生效，用量在控制台按天统计。
 
 免费公测：500 次/天，60 次/分钟，无需绑卡。

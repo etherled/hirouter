@@ -21,6 +21,15 @@
 
 ![CC Switch 自定义供应商：填 Base URL 与网关 Key](images/ccswitch-provider.png)
 
+## 2b. Codex / opencode 接入
+
+同一把网关 Key、同一个 Base URL（`https://api-hirouter.swancat.com/v1`），换个客户端照填：
+
+- **Codex**：按 Responses API 兼容方式接入，Base URL 与 Key 同上，模型名填网关侧的 `expose_as`。
+- **opencode**：provider 里 Base URL 指网关 `/v1`，`modelID` 填 `expose_as`，客户端零改造。
+
+分客户端的三行配置以控制台 Setup guide 为准（跟版本走，本页只记不变的部分）。压缩与改写在网关侧自动生效，Codex 与 opencode 各走一套压缩状态机，详见 [HOW-IT-WORKS.md](HOW-IT-WORKS.md)。
+
 ## 3. 确认跑通
 
 - 在客户端发一次普通请求，能正常回包即通。
@@ -33,6 +42,6 @@
 - **403 trial expired / email not verified**：先验证邮箱；免费公测不限时，限量。
 - **429**：今天 500 次用满（UTC 午夜重置）或 1 分钟内超 60 次。结合控制台用量看。
 - **模型报错 400**：该模型在当前端点无服务（如纯补全模型走对话端点），换对端点或模型。
-- **连不上**：先确认 Base URL 拼写（含 `/v1`），再看客户端代理/网络。
+- **连不上**：先确认 Base URL 拼写（含 `/v1` 且只含一遍——结尾已有 `/v1` 时不要再加第二遍，`/v1/v1/…` 会被网关直接 404），再看客户端代理/网络。
 
-遇到_PUBLIC_行为一律去 [Issues](https://github.com/etherled/hirouter/issues) 按模板贴复现（不要贴完整 Key 和隐私请求体）。
+遇到以上行为一律去 [Issues](https://github.com/etherled/hirouter/issues) 按模板贴复现（不要贴完整 Key 和隐私请求体）。

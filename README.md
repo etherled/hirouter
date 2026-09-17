@@ -1,10 +1,12 @@
 # HiRouter · BYOK token-saving gateway, measured −70%
 
-![token spend −70.8%](https://img.shields.io/badge/token_spend-%E2%88%9270.8%25-brightgreen) ![status](https://img.shields.io/badge/status-public_beta-blue) ![works with](https://img.shields.io/badge/works_with-Claude_Code_%7C_OpenAI-purple) ![free tier](https://img.shields.io/badge/free_tier-500_req%2Fday-orange)
+![token spend −70.8%](https://img.shields.io/badge/token_spend-%E2%88%9270.8%25-brightgreen) ![status](https://img.shields.io/badge/status-public_beta-blue) ![works with](https://img.shields.io/badge/works_with-Claude_Code_%7C_Codex_%7C_opencode-purple) ![free tier](https://img.shields.io/badge/free_tier-500_req%2Fday-orange)
 
 > **Measured on 170 real Codex requests: 23.18M tokens in → 6.77M sent upstream (−70.8%)**; 132 of them saved 70%–90%, larger contexts save more. Method: client-side estimate, not provider billing — full notes in [docs/BENCHMARK.md](docs/BENCHMARK.md).
 
-> 中文版：[README.zh-CN.md](README.zh-CN.md) · Free public beta · Try it: https://hirouter.swancat.com
+> **Also measured on 184 opencode chat rounds: ~23.57M estimated → ~10.16M sent upstream (−56.9%)**, zero failures, zero resets. Same estimate caveat — see [docs/BENCHMARK.md](docs/BENCHMARK.md#opencode-184-rounds-sep-16).
+
+> 中文版：[README.zh-CN.md](README.zh-CN.md) · Free public beta · Try it: https://hirouter.swancat.com · Product page + FAQ: https://swancat.com/hirouter/
 >
 > **Docs only in this repo. Server source is not open-sourced.**
 
@@ -13,7 +15,7 @@ HiRouter is a cloud gateway for AI coding agents: you bring your own upstream ke
 ## 3 steps to run
 
 1. **Register + verify**: https://hirouter.swancat.com, sign up with email, verify, get your first gateway key (`hrsk_…`).
-2. **Plug into your client**: with CC Switch, add a custom provider, Base URL `https://api-hirouter.swancat.com/v1`, key = your gateway key. Details in [docs/USAGE.md](docs/USAGE.md).
+2. **Plug into your client**: with CC Switch, add a custom provider, Base URL `https://api-hirouter.swancat.com/v1`, key = your gateway key. Claude Code / Codex / opencode all work — client-specific rows in [docs/USAGE.md](docs/USAGE.md).
 3. **Use as usual**: rewrite and fold apply automatically at the gateway; usage is counted daily in the console.
 
 Free public beta: 500 requests/day, 60/minute, no credit card.

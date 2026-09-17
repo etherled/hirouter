@@ -18,3 +18,13 @@
 ## 结论一句话
 
 上下文越大省得越多；长上下文 agent 任务走网关，出去的 token 按实测少约七成（客户端口径）。
+
+## opencode 184 轮（2026-09-16 晚） {#opencode-184-rounds-sep-16}
+
+> EN summary: 184 opencode chat rounds in one session (no resets): ~23.57M estimated → ~10.16M sent upstream (−56.9%), all ok. Same client-side-estimate caveat; output tokens (~80K) excluded. Full report with charts: [opencode-184-report.pdf](opencode-184-report.pdf).
+
+- 窗口：单机版网关日志，同一 opencode 会话连续 184 轮（北京时间 20:54:34 → 23:52:00，无 reset，成功率 100%）。
+- 估算约 2357 万 token，实发约 1016 万，**省约 1341 万（56.9%）**；输出约 8 万 token 未计（假设压缩不改变输出）。
+- 压缩：累计应用 707 批次、替换 47,012 条次（含跨轮重复计数）；176/184 轮生效，尾部稳定在每轮 7 批次/479 条；首轮只有预约不冻结。
+- 缓存：命中率中位数 97.1%；31 轮低于 50%（含 1 轮 0.0%），miss 的轮次由压缩顶上——压缩保下限，缓存保上限。
+- 口径：与 Codex 组同样是客户端估算（请求 bytes/4）vs 上游 usage 实报；单会话、单模型实测，不外推为普遍承诺。逐轮日志、抓包、截图三方交叉验证过程见完整报告 PDF。
